@@ -6,13 +6,7 @@ import pathlib
 import pandas as pd
 from sqlalchemy import create_engine
 
-DB_HOST = "localhost"
-DB_PORT = 5432
-DB_NAME = "retail_db"
-DB_USER = "postgres"
-DB_PASS = "your_password"
-
-DB_URL  = f"postgresql+psycopg2://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+DB_URL = "postgresql://postgres:1234@localhost:5432/retail_db"
 REPORTS = pathlib.Path("reports")
 REPORTS.mkdir(exist_ok=True)
 

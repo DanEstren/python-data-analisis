@@ -23,7 +23,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     df = df.dropna(subset=["CustomerID", "Description", "InvoiceDate"])
 
     # Remove cancellations (InvoiceNo starts with 'C')
-    df = df[~df["InvoiceNo"].str.startswith("C")]
+    df = df[~df["InvoiceNo"].astype(str).str.startswith("C")]
 
     # Remove non-positive quantities and prices
     df = df[(df["Quantity"] > 0) & (df["UnitPrice"] > 0)]
